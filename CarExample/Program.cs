@@ -6,7 +6,7 @@
         {
             // створення об'єкта класу Car
             var myCar = new Car("Toyota", "Corolla");
-          //  myCar. = "Red";
+            myCar.Color = "Red";
 
             myCar.Mark = "BMW";    
             Console.WriteLine(myCar.Mark);

@@ -2,7 +2,7 @@
 
 class Car
 {
-    #region СТАН ОБЄКТА (ПОЛЯ)
+    #region СТАН ОБ'ЄКТА (ПОЛЯ)
 
 
     // Коли потрібна валідаційна логіка це виглядає так
@@ -45,8 +45,7 @@ class Car
 
     #endregion
 
-
-    #region Коструювання о'бєкта (КОНСТРУКТОРИ)
+    #region Коструювання об'єкта (КОНСТРУКТОРИ)
     // Конструктор приймає 2 параметри
     public Car(string mark, string model)
     {
@@ -66,7 +65,7 @@ class Car
     #region ПОВЕДІНКА ОБ'ЄКТА (МЕТОДИ)
     public void Start()
     {
-        Console.WriteLine("Car ius started");
+        Console.WriteLine("Car is started");
     }
 
     public void Stop()
