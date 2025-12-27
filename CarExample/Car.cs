@@ -5,16 +5,18 @@ class Car
     #region СТАН ОБ'ЄКТА (ПОЛЯ)
 
 
+    public float VolumeOfEngeine { get; set; } = 1.6f;
+
     // Коли потрібна валідаційна логіка це виглядає так
-    private string mark;
+    //  private string mark;
     public string Mark
     {
-        get { return this.mark; }
+        get { return field; }
         set
         {
             if (!string.IsNullOrEmpty(value))
             {
-                this.mark = value;
+                field = value;
             }
         }
     }
@@ -37,13 +39,12 @@ class Car
 
     private string model;
     private DateTime year;
-    private string vin;
     private double engineCapacity;
     public string Color { get; set; }
 
     public string Model
     {
-        get => this.model;
+        get => model;
         set
         {
             if (string.IsNullOrEmpty(value))
@@ -54,37 +55,27 @@ class Car
             {
                 // обрізати пробіли і зробити першу літеру великою
                 var trimmed = value.Trim();
-                this.model = char.ToUpper(trimmed[0]) + trimmed.Substring(1);
+                model = char.ToUpper(trimmed[0]) + trimmed.Substring(1);
             }
         }
     }
 
     public DateTime Year
     {
-        get { return this.year; }
+        get { return year; }
         set
         {
             if (value == DateTime.MinValue)
             {
-                this.year = DateTime.Now;
+                year = DateTime.Now;
             }
             else
             {
-                this.year = value;
+                year = value;
             }
         }
     }
-    public string Vin
-    {
-        get { return vin; }
-        set
-        {
-            if (string.IsNullOrEmpty(value))
-                throw new ArgumentException("Vin cannot be null or empty");
-
-            vin = value;
-        }
-    }
+    public required string Vin { get; init; }
 
     public double EngineCapacity
     {
@@ -99,16 +90,18 @@ class Car
         }
     }
 
-    public double CurrentSpeed { get; set; }
+    public double CurrentSpeed { get; private set; }
 
     #endregion
 
     #region Коструювання об'єкта (КОНСТРУКТОРИ)
     // Конструктор приймає 2 параметри
+
     public Car(string mark, string model)
     {
-        this.mark = mark;
-        this.model = model;
+        Mark = mark;
+        Model = model;
+        CurrentSpeed = 10;
     }
 
     // Конструктор приймає 3 параметри
@@ -131,9 +124,15 @@ class Car
         Console.WriteLine("Car is stopped");
     }
 
+    public Car GetUpdatedCar()
+    {
+        VolumeOfEngeine = 2.0f;
+        return this;
+    }
+
     public void Accelerate(byte delta)
     {
-        this.CurrentSpeed += delta;
+        CurrentSpeed += delta;
         Console.WriteLine($"Car speed increased by {delta}. Current speed: {this.CurrentSpeed}");
     }
     #endregion
