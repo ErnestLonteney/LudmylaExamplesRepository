@@ -19,7 +19,7 @@
             // створення об'єкта класу Car
             var newCar = new Car("Renault", "Megan");
             // створення об'єкта класу Car
-            var car = new Car("Ford", "Focus", new DateTime(1, 1, 2024));
+            var car = new Car("Ford", "Focus", new DateTime(2024, 12, 1));
 
            car.Start();
 
