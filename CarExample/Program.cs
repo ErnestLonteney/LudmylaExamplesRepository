@@ -62,6 +62,11 @@
             };
 
 
+            SportCar sportCar1 = new SportCar("Volkswagen", "Geo", "Red")
+            { 
+                Vin = "3425345345" 
+            };
+
             Console.WriteLine(a.GetHashCode());
             Console.WriteLine(b.GetHashCode());
             Console.WriteLine(c.GetHashCode());
