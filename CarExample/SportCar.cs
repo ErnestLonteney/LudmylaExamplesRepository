@@ -1,20 +1,14 @@
 ﻿namespace CarExample
 {
-    public class SportCar : Car
+    public class SportCar(string mark, string model, string colorButton) : Car(mark, model)
     {
-        public SportCar(string mark, string model, string colorButton)
-            : base(mark, model)
-        {
-            ColorButton = colorButton;
-        }
-
         //public SportCar()
         //    :base("Fiat", "Ferrari")
         //{
 
         //}
 
-        public string ColorButton { get; set; } // null
+        public string ColorButton { get; set; } = colorButton; // значення яке лежить в параметрі colorButton присвоюється полю яке створено автоматично і працює з цією властивістю 
 
         public void Stabilization()
         {
