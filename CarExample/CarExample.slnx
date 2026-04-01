@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="../ParametersExample/ParametersExample.csproj" Id="7e870f82-e9ac-4873-b3e2-456afe220ca3" />
   <Project Path="CarExample.csproj" />
 </Solution>
