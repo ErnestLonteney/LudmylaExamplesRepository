@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassesRevision
 {
-    internal class Person
+    abstract class Person
     {
         // State
 
@@ -83,7 +83,7 @@ namespace ClassesRevision
             return $"Name: {FullName}, Date of Birth: {DateOfBirth}, Phone Number: {PhoneNumber}";
         }
 
-        public void GetMail(string message)
+        public virtual void GetMail(string message)
         {
             Console.WriteLine(message);
         }
